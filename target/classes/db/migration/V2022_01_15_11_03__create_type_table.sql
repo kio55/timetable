@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS type (
+    typeId TEXT PRIMARY KEY,
+    type TEXT
+)

@@ -1,6 +1,5 @@
 package org.kio55.timetableLab.web.controllers;
 
-import org.kio55.timetableLab.core.model.Group;
 import org.kio55.timetableLab.web.model.request.CreateGroupRequest;
 import org.kio55.timetableLab.web.model.response.CreateGroupResponse;
 import org.kio55.timetableLab.web.model.response.GetGroupResponse;
@@ -11,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller

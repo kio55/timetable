@@ -3,16 +3,22 @@ package org.kio55.timetableLab.config;
 import org.kio55.timetableLab.core.model.*;
 import org.kio55.timetableLab.core.repository.classRepository.IClassRepository;
 import org.kio55.timetableLab.core.repository.classRepository.MapClassRepository;
+import org.kio55.timetableLab.core.repository.classRepository.PostgresClassRepository;
 import org.kio55.timetableLab.core.repository.classroomRepository.IClassroomRepository;
 import org.kio55.timetableLab.core.repository.classroomRepository.MapClassroomRepository;
+import org.kio55.timetableLab.core.repository.classroomRepository.PostgresClassroomRepository;
 import org.kio55.timetableLab.core.repository.groupRepository.IGroupRepository;
 import org.kio55.timetableLab.core.repository.groupRepository.MapGroupRepository;
+import org.kio55.timetableLab.core.repository.groupRepository.PostgresGroupRepository;
 import org.kio55.timetableLab.core.repository.teacherRepository.ITeacherRepository;
 import org.kio55.timetableLab.core.repository.teacherRepository.MapTeacherRepository;
+import org.kio55.timetableLab.core.repository.teacherRepository.PostgresTeacherRepository;
 import org.kio55.timetableLab.core.repository.typeRepository.ITypeRepository;
 import org.kio55.timetableLab.core.repository.typeRepository.MapTypeRepository;
+import org.kio55.timetableLab.core.repository.typeRepository.PostgresTypeRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcOperations;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -68,28 +74,54 @@ public class RepoConfig {
         return classesMap;
     }
 
+//    @Bean(name = "groupRepository")
+//    public IGroupRepository groupRepository() {
+//        return new MapGroupRepository(groupMap());
+//    }
+
     @Bean(name = "groupRepository")
-    public IGroupRepository groupRepository() {
-        return new MapGroupRepository(groupMap());
+    public IGroupRepository groupRepository(final JdbcOperations jdbcOperations) {
+        return new PostgresGroupRepository(jdbcOperations);
     }
+
+//    @Bean(name = "teacherRepository")
+//    public ITeacherRepository teacherRepository() {
+//        return new MapTeacherRepository(teacherMap());
+//    }
 
     @Bean(name = "teacherRepository")
-    public ITeacherRepository teacherRepository() {
-        return new MapTeacherRepository(teacherMap());
+    public ITeacherRepository teacherRepository(final JdbcOperations jdbcOperations) {
+        return new PostgresTeacherRepository(jdbcOperations);
     }
+
+//    @Bean(name = "typeRepository")
+//    public ITypeRepository typeRepository() {
+//        return new MapTypeRepository(typeMap());
+//    }
 
     @Bean(name = "typeRepository")
-    public ITypeRepository typeRepository() {
-        return new MapTypeRepository(typeMap());
+    public ITypeRepository typeRepository(final JdbcOperations jdbcOperations) {
+        return new PostgresTypeRepository(jdbcOperations);
     }
+
+//    @Bean(name = "classroomRepository")
+//    public IClassroomRepository classroomRepository() {
+//        return new MapClassroomRepository(classroomMap());
+//    }
 
     @Bean(name = "classroomRepository")
-    public IClassroomRepository classroomRepository() {
-        return new MapClassroomRepository(classroomMap());
+    public IClassroomRepository classroomRepository(final JdbcOperations jdbcOperations) {
+        return new PostgresClassroomRepository(jdbcOperations);
     }
 
+//    @Bean(name = "classRepository")
+//    public IClassRepository classRepository() {
+//        return new MapClassRepository(classMap());
+//    }
+
     @Bean(name = "classRepository")
-    public IClassRepository classRepository() {
-        return new MapClassRepository(classMap());
+    public IClassRepository classRepository(final JdbcOperations jdbcOperations) {
+        return new PostgresClassRepository(jdbcOperations);
     }
+
 }

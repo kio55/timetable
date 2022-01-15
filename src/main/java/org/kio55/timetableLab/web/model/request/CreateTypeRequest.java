@@ -12,8 +12,8 @@ public class CreateTypeRequest {
     private final String type;
 
     @JsonCreator
-    public CreateTypeRequest(final Type type) {
-        this.type = type.getType();
+    public CreateTypeRequest(@JsonProperty("typeOfClass") final String type) {
+        this.type = type;
     }
 
     public String getType() {

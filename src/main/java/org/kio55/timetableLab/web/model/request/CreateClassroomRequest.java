@@ -13,9 +13,12 @@ public class CreateClassroomRequest {
     private final String universityBuilding;
 
     @JsonCreator
-    public CreateClassroomRequest(final Classroom classroom) {
-        this.classroom = classroom.getClassroom();
-        this.universityBuilding = classroom.getUniversityBuilding();
+    public CreateClassroomRequest(
+            @JsonProperty("classroom") String classroom,
+            @JsonProperty("universityBuilding") String universityBuilding
+            ) {
+        this.classroom = classroom;
+        this.universityBuilding = universityBuilding;
     }
 
     public String getClassroom() {

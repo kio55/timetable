@@ -51,9 +51,9 @@ public class ClassController {
     @GetMapping(value = "/group/{groupId}/getByDate")
     @ResponseBody
     public ResponseEntity<List<ClassResponse>> getClassByGroupIdAndDate(@PathVariable("groupId") final String groupId,
-                                                                        @RequestBody final DateRequest date) {
+                                                                        @RequestParam("date") final String date) {
         try {
-            List<ClassResponse> classes = classService.getClassesByIdAndDate(groupId, date);
+            List<ClassResponse> classes = classService.getClassesByIdAndDate(groupId, new DateRequest(date));
             return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(classes);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
