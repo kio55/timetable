@@ -63,9 +63,9 @@ public class ClassController {
     @GetMapping(value = "/teacher/{teacherId}")
     @ResponseBody
     public ResponseEntity<List<ClassResponse>> getClassByTeacherAndDate(@PathVariable("teacherId") final String teacherId,
-                                                                        @RequestBody final DateRequest date) {
+                                                                        @RequestParam("date") final String date) {
         try {
-            List<ClassResponse> classes = classService.getClassesByTeacherAndDate(teacherId, date);
+            List<ClassResponse> classes = classService.getClassesByTeacherAndDate(teacherId, new DateRequest(date));
             return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(classes);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

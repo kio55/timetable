@@ -1,0 +1,10 @@
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('0a93648c-fa3a-4007-a9d6-28c8e28884a9', '108-а', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('5afdb6c0-bb4f-4bc3-b37a-4cd18f92bd35', '208-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('3d85bd59-c993-4af6-bbe3-300891a058e6', '101-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('95443214-b49f-4794-b712-a19c59bccee7', '108-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('126a8009-1f61-4bda-a26c-84d3880a36a2', '202-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('521ebe1f-28e8-445f-b862-f110a9e93aa8', '204-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('f09cdd38-776e-43dd-b041-19a933101668', '209-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('783931eb-44fe-4c41-a0f6-a4b3faaf29d6', '106-б', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('1e08f548-1645-4213-975b-4d89bd5e53b2', '103-а', '10');
+INSERT INTO classroom (classroomid, classroom, universitybuilding) VALUES ('c2e3c5a9-4baf-4d4a-969a-d477f767b252', '207-б', '10');
